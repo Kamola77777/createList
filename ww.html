@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <h2>Empty</h2>
+    <form  id="my-form" method="POST" onsubmit="handleFormSubmit(event)" >
+        <input type="text"  name="name" placeholder="Your name" onkeyup="handleKeyPress(event)" onchange="handleChange(event)"><br>
+        <p>
+           <input type="checkbox"  style="width: 20px;" name="isStudent" onchange="handleCheckBox(event)" id="student" value="student">
+        </p>
+        <div class="university-input">
+            <input type="text" name="mealType" placeholder="Food name"><br><br>
+            <input type="text" name="mealPrice" placeholder="Price"><br><br>
+            <select name="mealOrigin" style="width: 300px; height: 30px ;">
+                <option selected>Origin</option>
+                <option value="1">Italian</option>
+                <option value="2">French</option>
+                <option value="3">Swedish</option>
+              </select><br><br>
+    <form  method="post">
+        <input type="file" name="upload_file" id="upload_file" onchange="getImage(event)">
+        <!-- <input type="submit" name="submit"> -->
+
+    </form>
+    <button style="width: 160px;margin-top: 10px; height: 25px; background-color: greenyellow; border-color: greenyellow; color: white;">Save</button>
+    <div id="preview"></div>
+<script>
+    function getImage(event) {
+        var image = URL.createObjectURL(event.target.files[0]);
+        var imageDiv = document.getElementById('preview');
+        var newImg = document.createElement('img');
+        newImg.src = image;
+        newImg.width = "300"
+        imageDiv.appendChild(newImg)
+    }
+
+
+    function handleChange(event) {
+  const h2 = document.querySelector('h2');
+  h2.innerText = event.target.value;
+}
+
+
+function handleKeyPress(event) {
+  const { target: { value } } = event;
+  const h2 = document.querySelector('h2');
+  h2.innerText = value;
+  console.log(event)
+}
+
+function handleFormSubmit(event) {
+  console.log(event);
+  event.preventDefault();
+  const list = document.getElementById('list');
+  const { mealType, mealPrice, mealOrigin, mealAddress, mealImage } = document.forms["my-form"];
+
+  const newEl = `
+       <h3 id="namess"> The type of this food is ${mealType.value}<br> and the price is not so high ${mealPrice.value} ${mealImage.value}<br> so that you can have a really ${mealOrigin.value}<br> at ${mealAddress.value} <h3>`
+  ;
+  list.innerHTML += newEl;
+  event.target.reset();
+  handleCheckBox()
+}
+/////image/////
+// const image_Inp = document.getElementById('input_Img');
+// var upload_img = "";
+
+//   image_Inp.addEventListener('click', function(){
+//   const reader = new FileReader();
+//   reader.addEventListener("load", ()=> {
+//     upload_img = reader.result;
+//     document.getElementById("#display_Img").style.backgroundImage = `url(${upload_img})`});
+//   });
+//   reader.readAsDataUrl(this.files[0]);
+
+function handleClick(event) {
+  event.preventDefault();
+  event.stopPropagation();
+  console.log('Button event', event)
+  // return true;
+}
+
+function handleCheckBox() {
+  const wrapperEl = document.querySelector('.university-input');
+  const checked = document.getElementById('student').checked;
+  if (checked) {
+    wrapperEl.classList.add('show')
+  } else {
+    wrapperEl.classList.remove('show');
+    const children = wrapperEl.children;
+    for (let i = 0; i < children.length; i++) {
+      children[i].value = '';
+    }
+  }
+}
+</script>
+</body>
+</html>

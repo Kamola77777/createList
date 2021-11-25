@@ -1,0 +1,70 @@
+body {
+    background-image: url(https://lp-cms-production.imgix.net/image_browser/Ithaa-Maldives.jpg?auto=format&fit=crop&sharp=10&vib=20&ixlib=react-8.6.4&w=850);
+    background-repeat: repeat;
+    
+}
+
+.university-input {
+    display: none;
+    
+}
+
+.university-input.show {
+    display: block;
+    width: 400px;
+    height: 400px;
+    border-radius: 25px;
+    text-align: center;
+    /* display: flex;
+    flex-direction: column;
+    justify-content: center;
+    margin-left: 480px; */
+    
+}
+ input {
+     width: 300px;
+     height: 30px;
+     margin-top: 10px;
+ }
+.h4 {
+    font-family:'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+}
+#namess {
+    border: 1px solid black;
+    width: 250px;
+    border-radius: 20px;
+    text-align: center;
+    background-color: blanchedalmond;
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    margin-left: 480px;
+    margin-top: -10px;
+}
+#display_Img{
+    width: 250px;
+    height: 200px;
+    background-size: cover;
+}
+img{
+    display: block;
+    position: relative;
+    width: 200px;
+    max-height: 200px;
+    margin: auto;
+}
+
+#ww {
+    width: 300px;
+    border: 1px solid;
+}
+#chosen-image {
+    position: absolute;
+    top: 620px;
+    left: -200px;
+    flex-direction: column;
+    justify-content: center;
+    margin-left: 480px;
+    margin-top: -10px;
+}

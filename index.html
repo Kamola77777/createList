@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="style.css">
+  
+</head>
+
+<body>
+    <h2>Empty</h2>
+    <form id="my-form" method="POST" onsubmit="handleFormSubmit(event)" >
+        <input type="text"  name="name" placeholder="Your name" onkeyup="handleKeyPress(event)" onchange="handleChange(event)"><br>
+        <p>
+           <input type="checkbox"  style="width: 20px;" name="isStudent" onchange="handleCheckBox(event)" id="student" value="student">
+        </p>
+        <div class="university-input">
+            <input type="text" name="mealType" placeholder="Food name"><br><br>
+            <input type="text" name="mealPrice" placeholder="Price"><br><br>
+            <select name="mealOrigin" style="width: 300px; height: 30px ;">
+                <option selected>Origin</option>
+                <option value="1">Italian</option>
+                <option value="2">French</option>
+                <option value="3">Swedish</option>
+              </select><br><br>
+            <input type="text" name="mealAddress" placeholder="Category"><br><br>
+            <img id="chosen-image">
+         <div id="ww">
+            <input type="file" id="upload-button" accept="image/png" name="mealImage">
+         </div>
+            <!-- <input type="file" name="mealImage" id="input_Img" placeholder="Image" accept="image/png, image/jpg"> --> -->
+             <form  method="post">
+                <!-- <input type="file" name="upload_file" id="upload_file" onclick="getImage(event)"> -->
+                <!-- <input type="submit" name="submit"> -->
+        
+            </form> 
+            <!-- <div id="preview"></div> -->
+            <button style="width: 160px;margin-top: 10px; height: 25px; background-color: greenyellow; border-color: greenyellow; color: white;">Save</button>
+        </div>
+        </div>
+        
+    </form>
+   <div id="list"></div>
+   <div id="display_Img"></div> 
+    <script src="script.js"></script>
+</body>
+
+</html>

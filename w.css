@@ -1,0 +1,23 @@
+body {
+    background-color: blanchedalmond;
+}
+.image-container{
+    width: 90%;
+    margin: 0 auto 30px auto;
+}
+ img{
+    display: block;
+    position: relative;
+    width: 200px;
+    max-height: 200px;
+    margin: auto;
+}
+
+#ww {
+    width: 300px;
+    border: 1px solid;
+    
+}
+input img {
+    width: 200px;
+}
